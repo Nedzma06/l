@@ -15,114 +15,96 @@
     .gray-text {
       color: gray;
     }
+    /* Style the navbar */
+    #navbar {
+      overflow: hidden;
+      background-color: #333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Navbar links */
+    #navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+      border-right: 1px solid #888; /* Add border between navbar links */
+    }
+
+    #navbar a:last-child {
+      border-right: none; /* Remove border for the last navbar link */
+    }
+
+    #navbar a i {
+      margin-right: 5px; /* Add some spacing between icon and text */
+    }
+
+    #navbar a:hover {
+      background-color: #555; /* Darken background color on hover */
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000; /* Ensure navbar stays on top */
+    }
   </style>
-</head>
-<body>
-
-<h1 class="black-text">Halid Bešlić</h1>
-<p class="black-text">Halid Bešlić is a renowned singer from Bosnia and Herzegovina.</p>
-<p class="green-text">Known for his powerful voice and emotional performances, Bešlić has captivated audiences for decades.</p>
-<p class="gray-text">His music often reflects themes of love, heartache, and the beauty of his homeland.</p>
-<p class="black-text">With numerous hit songs and albums to his name, Halid Bešlić remains a beloved figure in the Balkans music scene.</p>
-
-<h2>Halid Bešlić LP</h2>
-<img src="image-url.jpg" alt="Halid Bešlić LP cover">
-
-<div class="container">
-  <h2>Color Changer</h2>
-  <label for="color-picker">Choose a color:</label>
-  <select id="color-picker">
-    <option value="gray">Gray</option>
-    <option value="blue">Blue</option>
-  </select>
-  <div id="content">
-    <p>This is some sample text.</p>
-  </div>
-</div>
-
-<script>
-  const colorPicker = document.getElementById('color-picker');
-  const content = document.getElementById('content');
-
-  colorPicker.addEventListener('change', function() {
-    const color = colorPicker.value;
-    content.style.color = color;
-  });
-</script>
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-/* Style the navbar */
-#navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Navbar links */
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-}
-
-/* Page content */
-.content {
-  padding: 16px;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
-</style>
+  <!-- Add Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
 <div id="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
+  <a href="#home"><i class="fas fa-home"></i>Home</a>
+  <a href="#news"><i class="fas fa-newspaper"></i>News</a>
+  <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
 </div>
 
 <div class="content">
-  <h3>Sticky Navigation Example</h3>
-  <p>The navbar will stick to the top of the page when you reach its scroll position.</p>
-  <p>Scroll back up to remove the sticky effect.</p>
-  <p>Some text to fill the content area and demonstrate the sticky effect...</p>
+  <h1 class="black-text">Halid Bešlić</h1>
+  <p class="black-text">Halid Bešlić is a renowned singer from Bosnia and Herzegovina.</p>
+  <p class="green-text">Known for his powerful voice and emotional performances, Bešlić has captivated audiences for decades.</p>
+  <p class="gray-text">His music often reflects themes of love, heartache, and the beauty of his homeland.</p>
+  <p class="black-text">With numerous hit songs and albums to his name, Halid Bešlić remains a beloved figure in the Balkans music scene.</p>
+
+  <h2>Halid Bešlić LP</h2>
+  <img src="image-url.jpg" alt="Halid Bešlić LP cover">
+
+  <div class="container">
+    <h2>Color Changer</h2>
+    <label for="color-picker">Choose a color:</label>
+    <select id="color-picker">
+      <option value="gray">Gray</option>
+      <option value="blue">Blue</option>
+    </select>
+    <div id="content">
+      <p>This is some sample text.</p>
+    </div>
+  </div>
 </div>
 
 <script>
-// When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
+  // Get the navbar
+  var navbar = document.getElementById("navbar");
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
+  // Get the offset position of the navbar
+  var sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
   }
-}
 </script>
 
-</body>
-</html>
 </body>
 </html>
